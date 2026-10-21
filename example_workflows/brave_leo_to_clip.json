@@ -1,0 +1,62 @@
+{
+  "last_node_id": 3,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "BraveLeo_EnhancePrompt",
+      "pos": [80, 100],
+      "size": [390, 440],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "enhanced_prompt", "type": "STRING", "links": [1, 2]},
+        {"name": "raw_response", "type": "STRING", "links": null},
+        {"name": "status", "type": "STRING", "links": null}
+      ],
+      "properties": {"Node name for S&R": "BraveLeo_EnhancePrompt"},
+      "widgets_values": ["A puppy dog sniffing a flower.", "rewrite", "", "Act as an expert Prompt Engineer for image generation. Your task is to expand my basic concept into a highly detailed, \"long-form\" positive text-to-image prompt. Assume the model renders exactly what is described physically. Do not rely on it to infer missing details; every texture, light source, and material property must be explicitly stated in the positive prompt. Please follow this structure for the enhanced prompt: 1. Subject & Micro-Details: Define the main subject with intricate physical descriptions (e.g., pore structure, fabric weave, material imperfections, subsurface scattering). 2. Environment & Atmosphere: Describe the setting with depth, specific atmospheric particles (haze, dust, humidity), and background geometry. 3. Lighting Physics: Specify the light source (type, color temperature, angle), interaction with surfaces (specular highlights, ray-traced reflections, volumetric fog), and shadow density. 4. Composition & Camera: Define the lens focal length (e.g., 35mm, 85mm, macro), aperture (depth of field), camera angle, and framing rules. 5. Style & Render Quality: Explicitly state the rendering style (e.g., film grain, halftone, oil paint texture) and specific surface qualities (matte, glossy, rough, wet). Output ONLY the enhanced positive prompt, ready to be copied and pasted directly into an image model. Do not include any negative constraints, introductory text, or explanations.", "managed", "headless", 90, "", "127.0.0.1", 9222]
+    },
+    {
+      "id": 2,
+      "type": "CLIPTextEncode",
+      "pos": [560, 100],
+      "size": [390, 160],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip", "type": "CLIP", "link": null},
+        {"name": "text", "type": "STRING", "link": 1, "widget": {"name": "text"}}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": null}
+      ],
+      "properties": {"Node name for S&R": "CLIPTextEncode"},
+      "widgets_values": [""]
+    },
+    {
+      "id": 3,
+      "type": "PreviewAny",
+      "pos": [560, 320],
+      "size": [390, 160],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {"name": "source", "type": "*", "link": 2}
+      ],
+      "outputs": [
+        {"name": "STRING", "type": "STRING", "links": null}
+      ],
+      "properties": {"Node name for S&R": "PreviewAny"}
+    }
+  ],
+  "links": [[1, 1, 0, 2, 1, "STRING"], [2, 1, 0, 3, 0, "*"]],
+  "groups": [],
+  "config": {},
+  "extra": {"ds": {"scale": 1, "offset": [0, 0]}},
+  "version": 0.4
+}

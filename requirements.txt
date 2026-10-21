@@ -1,0 +1,6 @@
+# Browser Prompt Enhancer dependencies
+# After installing, fetch the browser driver/binaries:
+#     playwright install chromium
+# On Linux/WSL2 you may also need the system libs:
+#     playwright install-deps chromium
+playwright>=1.44

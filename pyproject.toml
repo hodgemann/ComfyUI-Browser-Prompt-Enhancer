@@ -1,0 +1,26 @@
+[project]
+name = "comfyui-browser-prompt-enhancer"
+version = "1.0.0"
+description = "Unofficial ComfyUI prompt enhancer using Brave Leo through local browser automation."
+authors = [{ name = "Hodge Mann" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["comfyui", "brave", "leo", "prompt", "playwright", "automation"]
+dependencies = [
+    "playwright>=1.44",
+]
+classifiers = [
+    # Optional compatibility hints understood by the registry:
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+]
+
+[project.urls]
+Repository = "https://github.com/hodgemann/ComfyUI-Browser-Prompt-Enhancer"
+
+[tool.comfy]
+PublisherId = "hodgemann"
+DisplayName = "🪿 Browser Prompt Enhancer"
+Icon = ""

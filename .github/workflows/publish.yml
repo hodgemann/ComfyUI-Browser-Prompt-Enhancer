@@ -1,0 +1,19 @@
+name: Publish to Comfy registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-node:
+    name: Publish Custom Node to registry
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Publish Custom Node
+        uses: Comfy-Org/publish-node-action@main
+        with:
+          # Create this secret in your repo: Settings -> Secrets and variables ->
+          # Actions -> New repository secret, named REGISTRY_ACCESS_TOKEN.
+          # The value is an API key generated at https://registry.comfy.org.
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}

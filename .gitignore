@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Playwright / browser data
+.cache/
+ms-playwright/
+
+# BraveLeo runtime artifacts
+brave_leo_debug.html
+brave_leo_debug.png
+AI_HANDOFF.md
+.agents/
+.aws/
+.codex/
+# The dedicated Brave profile lives in ~/.comfyui-braveleo by default, but ignore
+# it here too in case anyone points BRAVE_LEO_PROFILE_DIR inside the repo.
+brave-profile/
+.comfyui-braveleo/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
